@@ -1,5 +1,5 @@
 {
-  "name": "6324-app-stack",
+  "name": "forge",
   "version": "0.1.0",
   "description": "Build and deploy internal tools for team 6324 the same way the attendance app was built: Next.js App Router + TypeScript + Tailwind v4 + Drizzle ORM + Neon Postgres + Auth.js, deployed to Vercel.",
   "author": {

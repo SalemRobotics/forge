@@ -1,4 +1,4 @@
-# 6324 App Stack — backend & infra conventions
+# Forge — backend & infra conventions
 
 **Audience:** an AI coding agent (or human) building a new internal tool for team 6324. This is the backend/infra half of the standard; see `ui-standards.md` in this same folder for the frontend/visual half.
 

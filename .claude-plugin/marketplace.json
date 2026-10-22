@@ -5,7 +5,7 @@
   },
   "plugins": [
     {
-      "name": "6324-app-stack",
+      "name": "forge",
       "source": "./"
     }
   ]

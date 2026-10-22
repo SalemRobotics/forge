@@ -1,14 +1,49 @@
-# 6324 App Stack
+# Forge
 
 A Claude Code plugin that packages up how team 6324 builds and deploys
 internal tools, so every new tool (attendance, inventory, scouting,
 whatever's next) looks and behaves the same way, and ships the same way,
 without re-deriving the conventions from scratch each time.
 
-This started from the `frc-attendance` app — that repo is still the
-canonical, living reference implementation. Everything in here is either a
-copy of its documented standards or an automation of the steps that were
-done by hand to build and ship it.
+## Installing
+
+This repo is both a plugin (`.claude-plugin/plugin.json`) and its own
+local marketplace (`.claude-plugin/marketplace.json`), so it's
+self-contained — no separate marketplace repo needed, and no need to be
+published anywhere first. That matters because the intended distribution
+is: **clone this repo once, then add it as a git submodule inside each
+project that wants it** (`git submodule add <this-repo-url> .forge` or
+similar), and point Claude Code at that local submodule path.
+
+Register the marketplace, pointing at wherever this repo (or the submodule)
+lives on disk — relative paths resolve from your current shell/session
+working directory, so either `cd` there first or use an absolute path:
+
+```
+/plugin marketplace add ./path/to/forge
+```
+
+Then install it:
+
+```
+/plugin install forge@6324-tools
+```
+
+(`6324-tools` is this repo's marketplace name, from `marketplace.json`;
+`forge` is the plugin name, from `plugin.json` — they're deliberately
+different strings so the `name@marketplace` syntax reads clearly.)
+
+Registering a marketplace is per-user/per-machine, not per-project or
+per-session — once added, it's available in every project you open on that
+machine afterward, no need to re-register. Because the plugin's source is
+a local relative path (`"./"`), it loads in place: edit a skill's `.md`
+file in the submodule and the change picks up on the next session start or
+a reload, no reinstall needed.
+
+If you'd rather skip the plugin system entirely, you can also just copy
+`skills/` and `agents/` straight into `~/.claude/skills/` and
+`~/.claude/agents/` — they're plain markdown, no build step, and that
+works whether or not this repo is a submodule anywhere.
 
 ## What's in here
 
@@ -36,39 +71,10 @@ done by hand to build and ship it.
   conventions. Deliberately does *not* handle deployment — that stays in
   the main conversation so the confirmation checkpoints above actually work.
 
-## Installing
-
-This repo is both a plugin (`.claude-plugin/plugin.json`) and its own
-local marketplace (`.claude-plugin/marketplace.json`), so it's
-self-contained — no separate marketplace repo needed, and no need to be
-published anywhere first. That matters because the intended distribution
-is: **clone this repo once, then add it as a git submodule inside each
-project that wants it** (`git submodule add <this-repo-url> .6324-app-stack`
-or similar), and point Claude Code at that local submodule path.
-
-Register the marketplace, pointing at wherever this repo (or the submodule)
-lives on disk — relative paths resolve from your current shell/session
-working directory, so either `cd` there first or use an absolute path:
-
-```
-/plugin marketplace add ./path/to/6324-app-stack
-```
-
-Then install it:
-
-```
-/plugin install 6324-app-stack@6324-tools
-```
-
-(`6324-tools` is this repo's marketplace name, from `marketplace.json`;
-`6324-app-stack` is the plugin name, from `plugin.json` — they're
-deliberately different strings so the `name@marketplace` syntax reads
-clearly.)
-
-If you'd rather skip the plugin system entirely, you can also just copy
-`skills/` and `agents/` straight into `~/.claude/skills/` and
-`~/.claude/agents/` — they're plain markdown, no build step, and that
-works whether or not this repo is a submodule anywhere.
+This started from the `frc-attendance` app — that repo is still the
+canonical, living reference implementation. Everything in here is either a
+copy of its documented standards or an automation of the steps that were
+done by hand to build and ship it.
 
 ## Credentials this expects you to set up yourself
 

@@ -1,4 +1,4 @@
-# Forge
+# Forge 
 
 <img src="assets/logo-128.png" alt="Forge logo" width="96" height="96">
 
@@ -8,6 +8,17 @@ whatever's next) looks and behaves the same way, and ships the same way,
 without re-deriving the conventions from scratch each time.
 
 ## Installing
+
+Open a new folder for your project to live in, and then tell Claude:
+```
+Initialize a git repository here, and add this submodule: https://github.com/SalemRobotics/forge.git 
+```
+
+Then type into the Claude Code prompt:
+```
+/plugin marketplace add ./forge
+/plugin install forge@6324-tools
+```
 
 This repo is both a plugin (`.claude-plugin/plugin.json`) and its own
 local marketplace (`.claude-plugin/marketplace.json`), so it's

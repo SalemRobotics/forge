@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#172f5c"/>
+      <stop offset="1" stop-color="#0b1f3a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.62" cy="0.58" r="0.55">
+      <stop offset="0" stop-color="#f2a93b" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f2a93b" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#bg)"/>
+  <rect x="4" y="4" width="120" height="120" rx="28" fill="url(#glow)"/>
+  <rect x="4.5" y="4.5" width="119" height="119" rx="27.5" fill="none" stroke="#000000" stroke-opacity="0.25"/>
+
+  <!-- hammer (lucide-react "hammer" glyph, scaled + centered) -->
+  <g transform="translate(22 22) scale(3.4)" fill="none" stroke="#f7ece0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m15 12-9.373 9.373a1 1 0 0 1-3.001-3L12 9"/>
+    <path d="m18 15 4-4"/>
+    <path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172v-.344a2 2 0 0 0-.586-1.414l-1.657-1.657A6 6 0 0 0 12.516 3H9l1.243 1.243A6 6 0 0 1 12 8.485V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/>
+  </g>
+
+  <!-- sparks -->
+  <path d="M99 26 L104.5 31.5 L99 37 L93.5 31.5 Z" fill="#f2a93b"/>
+  <path d="M110 40 L113.5 43.5 L110 47 L106.5 43.5 Z" fill="#f2a93b" opacity="0.85"/>
+  <path d="M90 15 L92.5 17.5 L90 20 L87.5 17.5 Z" fill="#f2a93b" opacity="0.7"/>
+</svg>

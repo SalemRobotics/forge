@@ -1,5 +1,7 @@
 # Forge
 
+<img src="assets/logo-128.png" alt="Forge logo" width="96" height="96">
+
 A Claude Code plugin that packages up how team 6324 builds and deploys
 internal tools, so every new tool (attendance, inventory, scouting,
 whatever's next) looks and behaves the same way, and ships the same way,

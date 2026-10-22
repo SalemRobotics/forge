@@ -19,7 +19,12 @@ done by hand to build and ship it.
   repo layout, schema/migration rules, the auth pattern, the server-action
   pattern, the testing pattern, and the deploy checklist.
 - **`skills/scaffold-6324-app/`** — scaffolds a brand-new app from scratch
-  following both of the above. Local-only; touches no cloud resources.
+  following both of the above, for any domain (not just attendance-shaped
+  tools). Local-only; touches no cloud resources.
+- **`templates/`** — the handful of files that are genuinely identical
+  across every 6324-stack app (the DB client, `drizzle.config.ts`, the
+  server-action helpers) and so get copied verbatim by the scaffold skill
+  instead of rewritten each time.
 - **`skills/deploy-6324-app/`** — deploys a 6324-stack app to Vercel + Neon
   using the Vercel CLI, Neon CLI (`neonctl`), and `git`, installing those
   CLIs if they're missing. Pauses for your explicit confirmation before the

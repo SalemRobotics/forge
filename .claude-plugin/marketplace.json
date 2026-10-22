@@ -1,0 +1,12 @@
+{
+  "name": "6324-tools",
+  "owner": {
+    "name": "FRC Team 6324"
+  },
+  "plugins": [
+    {
+      "name": "6324-app-stack",
+      "source": "./"
+    }
+  ]
+}

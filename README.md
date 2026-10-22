@@ -38,15 +38,37 @@ done by hand to build and ship it.
 
 ## Installing
 
-From inside Claude Code, in any project:
+This repo is both a plugin (`.claude-plugin/plugin.json`) and its own
+local marketplace (`.claude-plugin/marketplace.json`), so it's
+self-contained — no separate marketplace repo needed, and no need to be
+published anywhere first. That matters because the intended distribution
+is: **clone this repo once, then add it as a git submodule inside each
+project that wants it** (`git submodule add <this-repo-url> .6324-app-stack`
+or similar), and point Claude Code at that local submodule path.
+
+Register the marketplace, pointing at wherever this repo (or the submodule)
+lives on disk — relative paths resolve from your current shell/session
+working directory, so either `cd` there first or use an absolute path:
 
 ```
-/plugin install 6324-app-stack@local
+/plugin marketplace add ./path/to/6324-app-stack
 ```
 
-or, if you'd rather not install it as a plugin, you can just copy
+Then install it:
+
+```
+/plugin install 6324-app-stack@6324-tools
+```
+
+(`6324-tools` is this repo's marketplace name, from `marketplace.json`;
+`6324-app-stack` is the plugin name, from `plugin.json` — they're
+deliberately different strings so the `name@marketplace` syntax reads
+clearly.)
+
+If you'd rather skip the plugin system entirely, you can also just copy
 `skills/` and `agents/` straight into `~/.claude/skills/` and
-`~/.claude/agents/` — they're plain markdown, no build step.
+`~/.claude/agents/` — they're plain markdown, no build step, and that
+works whether or not this repo is a submodule anywhere.
 
 ## Credentials this expects you to set up yourself
 
